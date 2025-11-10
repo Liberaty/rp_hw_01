@@ -52,6 +52,7 @@ Resource Terraform для Yandex Cloud:
 ![5.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/5.1.png?raw=true)
 
 6. Файлы *.tf закоммичены, кроме terraform.tfvars, где содержатся переменные для подключения cloud_id, folder_id и ssh_pub_key.
+![6.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/6.1.png?raw=true)
 
 ### Правила приёма работы
 

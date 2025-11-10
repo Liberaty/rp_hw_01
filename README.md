@@ -34,24 +34,33 @@ Resource Terraform для Yandex Cloud:
 ### Решение
 
 1. После применения командой ```terraform apply``` создаются VPC, route table, и 3 VM (public-vm, private-vm, nat-instance):
+
 ![1.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/1.1.png?raw=true)
+
 ![1.2.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/1.2.png?raw=true)
+
 ![1.3.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/1.3.png?raw=true)
+
 ![1.4.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/1.4.png?raw=true)
 
 2. Проверяем подключение к public-vm ```ssh ubuntu@89.169.155.206``` и проверяем доступ в интернет:
+
 ![2.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/2.1.png?raw=true)
 
 3. Для того чтобы с public-vm подключиться к private-vm по ее локальному IP используем ProxyJump, подключаемся к privat-vm напрямую с моего PC (ключ -J) командой ```ssh -J ubuntu@89.169.155.206 ubuntu@192.168.20.24``` и проверяем с нее доступ в интернет:
+
 ![3.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/3.1.png?raw=true)
 
 4. Также можно убедиться по трассировке, что трафик идет через NAT-инстанс с IP 192.168.10.254:
+
 ![4.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/4.1.png?raw=true)
 
 5. Проверяем, что у private-vm внешний IP соответствует NAT-инстансу:
+
 ![5.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/5.1.png?raw=true)
 
 6. Файлы *.tf закоммичены, кроме terraform.tfvars, где содержатся переменные для подключения cloud_id, folder_id и ssh_pub_key.
+
 ![6.1.png](https://github.com/Liberaty/rp_hw_01/blob/main/img/6.1.png?raw=true)
 
 ### Правила приёма работы
